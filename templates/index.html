@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        /* Ensure the background covers the entire page */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main background styling */
+        body {
+            background-image: url('{{ url_for('static', filename='img/bg.webp') }}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Overlay to dim the background and make the section cover the full height */
+        .probootstrap-hero {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 100px 0;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            flex: 1; /* Make this section grow to fill available space */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #343a40;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a.active {
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #007bff;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            margin: auto;
+            max-width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('home') }}" class="active">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('symptom') }}">Predict Symptoms</a>
+        <a href="{{ url_for('contact') }}">Get In Touch</a>
+    </div>
+
+    <section class="probootstrap-hero">
+        <div class="container">
+            <h1>Welcome to the Heart Disease Prediction System</h1>
+            <p>Predict your heart disease risk using advanced machine learning algorithms.</p>
+            <!-- Redirect to login page when clicked -->
+            <a href="{{ url_for('login') }}" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+</body>
+
+</html>
